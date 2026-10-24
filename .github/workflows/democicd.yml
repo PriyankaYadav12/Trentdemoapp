@@ -25,6 +25,11 @@ jobs:
 
       - name: Verify Docker image
         run: docker image inspect python-app:${{ github.sha }}
-
+        
+      - name: tag Docker image
+        run: docker tag python-app:v1.0 priyankayadav08/python-app:v1.0 
+        
       - name: Push Docker Image respective registry
         run: docker push priyankayadav08/python-app:v1.0 
+
+       
